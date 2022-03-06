@@ -25,7 +25,8 @@ cacheSolve <- function(x, ...) {
     inverse <- x$getInv
     if (!is.null(inverse)){inverse}
     else{
-      inverse<-solve(x$get())
+      matrix<-x$get()
+      inverse<-solve(matrix,...)
       x$setInv(inverse)
       inverse
     }
